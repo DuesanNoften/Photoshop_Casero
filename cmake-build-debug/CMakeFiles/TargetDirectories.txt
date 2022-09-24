@@ -1,0 +1,3 @@
+/home/kevin/Escritorio/Photoshop_Casero/cmake-build-debug/CMakeFiles/Photoshop_Casero.dir
+/home/kevin/Escritorio/Photoshop_Casero/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/kevin/Escritorio/Photoshop_Casero/cmake-build-debug/CMakeFiles/rebuild_cache.dir
