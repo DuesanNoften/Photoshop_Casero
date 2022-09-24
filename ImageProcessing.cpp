@@ -21,7 +21,7 @@ private:
 public:
     ImageProcessing(char,string);
 
-    char filterType();
+    int filterType();
     int gaussianBlur();
     int grayScale();
     int gammaCorrection();
@@ -32,12 +32,12 @@ public:
 //Constructor de Clase
 ImageProcessing::ImageProcessing(char _type,string path){
     type = _type;
-    Mat img = imread(path);
+    img = imread(path);
 
 
 }
 
-char ImageProcessing::filterType(){
+int ImageProcessing::filterType(){
     if(type == 'G'){
         cout <<"Filtro Gaussian";
         gaussianBlur();

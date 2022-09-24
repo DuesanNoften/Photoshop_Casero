@@ -49,15 +49,15 @@ cmake_ninja_workdir = /home/kevin/Escritorio/Photoshop_Casero/cmake-build-debug/
 
 build cmake_object_order_depends_target_Photoshop_Casero: phony || CMakeFiles/Photoshop_Casero.dir
 
-build CMakeFiles/Photoshop_Casero.dir/main.cpp.o: CXX_COMPILER__Photoshop_Casero_Debug /home/kevin/Escritorio/Photoshop_Casero/main.cpp || cmake_object_order_depends_target_Photoshop_Casero
-  DEP_FILE = CMakeFiles/Photoshop_Casero.dir/main.cpp.o.d
+build CMakeFiles/Photoshop_Casero.dir/ImageProcessing.cpp.o: CXX_COMPILER__Photoshop_Casero_Debug /home/kevin/Escritorio/Photoshop_Casero/ImageProcessing.cpp || cmake_object_order_depends_target_Photoshop_Casero
+  DEP_FILE = CMakeFiles/Photoshop_Casero.dir/ImageProcessing.cpp.o.d
   FLAGS = -g -std=gnu++14
   INCLUDES = -isystem /usr/local/include/opencv4
   OBJECT_DIR = CMakeFiles/Photoshop_Casero.dir
   OBJECT_FILE_DIR = CMakeFiles/Photoshop_Casero.dir
 
-build CMakeFiles/Photoshop_Casero.dir/ImageProcessing.cpp.o: CXX_COMPILER__Photoshop_Casero_Debug /home/kevin/Escritorio/Photoshop_Casero/ImageProcessing.cpp || cmake_object_order_depends_target_Photoshop_Casero
-  DEP_FILE = CMakeFiles/Photoshop_Casero.dir/ImageProcessing.cpp.o.d
+build CMakeFiles/Photoshop_Casero.dir/main.cpp.o: CXX_COMPILER__Photoshop_Casero_Debug /home/kevin/Escritorio/Photoshop_Casero/main.cpp || cmake_object_order_depends_target_Photoshop_Casero
+  DEP_FILE = CMakeFiles/Photoshop_Casero.dir/main.cpp.o.d
   FLAGS = -g -std=gnu++14
   INCLUDES = -isystem /usr/local/include/opencv4
   OBJECT_DIR = CMakeFiles/Photoshop_Casero.dir
@@ -71,7 +71,7 @@ build CMakeFiles/Photoshop_Casero.dir/ImageProcessing.cpp.o: CXX_COMPILER__Photo
 #############################################
 # Link the executable Photoshop_Casero
 
-build Photoshop_Casero: CXX_EXECUTABLE_LINKER__Photoshop_Casero_Debug CMakeFiles/Photoshop_Casero.dir/main.cpp.o CMakeFiles/Photoshop_Casero.dir/ImageProcessing.cpp.o | /usr/local/lib/libopencv_gapi.so.4.6.0 /usr/local/lib/libopencv_highgui.so.4.6.0 /usr/local/lib/libopencv_ml.so.4.6.0 /usr/local/lib/libopencv_objdetect.so.4.6.0 /usr/local/lib/libopencv_photo.so.4.6.0 /usr/local/lib/libopencv_stitching.so.4.6.0 /usr/local/lib/libopencv_video.so.4.6.0 /usr/local/lib/libopencv_videoio.so.4.6.0 /usr/local/lib/libopencv_imgcodecs.so.4.6.0 /usr/local/lib/libopencv_dnn.so.4.6.0 /usr/local/lib/libopencv_calib3d.so.4.6.0 /usr/local/lib/libopencv_features2d.so.4.6.0 /usr/local/lib/libopencv_flann.so.4.6.0 /usr/local/lib/libopencv_imgproc.so.4.6.0 /usr/local/lib/libopencv_core.so.4.6.0
+build Photoshop_Casero: CXX_EXECUTABLE_LINKER__Photoshop_Casero_Debug CMakeFiles/Photoshop_Casero.dir/ImageProcessing.cpp.o CMakeFiles/Photoshop_Casero.dir/main.cpp.o | /usr/local/lib/libopencv_gapi.so.4.6.0 /usr/local/lib/libopencv_highgui.so.4.6.0 /usr/local/lib/libopencv_ml.so.4.6.0 /usr/local/lib/libopencv_objdetect.so.4.6.0 /usr/local/lib/libopencv_photo.so.4.6.0 /usr/local/lib/libopencv_stitching.so.4.6.0 /usr/local/lib/libopencv_video.so.4.6.0 /usr/local/lib/libopencv_videoio.so.4.6.0 /usr/local/lib/libopencv_imgcodecs.so.4.6.0 /usr/local/lib/libopencv_dnn.so.4.6.0 /usr/local/lib/libopencv_calib3d.so.4.6.0 /usr/local/lib/libopencv_features2d.so.4.6.0 /usr/local/lib/libopencv_flann.so.4.6.0 /usr/local/lib/libopencv_imgproc.so.4.6.0 /usr/local/lib/libopencv_core.so.4.6.0
   FLAGS = -g
   LINK_LIBRARIES = -Wl,-rpath,/usr/local/lib  /usr/local/lib/libopencv_gapi.so.4.6.0  /usr/local/lib/libopencv_highgui.so.4.6.0  /usr/local/lib/libopencv_ml.so.4.6.0  /usr/local/lib/libopencv_objdetect.so.4.6.0  /usr/local/lib/libopencv_photo.so.4.6.0  /usr/local/lib/libopencv_stitching.so.4.6.0  /usr/local/lib/libopencv_video.so.4.6.0  /usr/local/lib/libopencv_videoio.so.4.6.0  /usr/local/lib/libopencv_imgcodecs.so.4.6.0  /usr/local/lib/libopencv_dnn.so.4.6.0  /usr/local/lib/libopencv_calib3d.so.4.6.0  /usr/local/lib/libopencv_features2d.so.4.6.0  /usr/local/lib/libopencv_flann.so.4.6.0  /usr/local/lib/libopencv_imgproc.so.4.6.0  /usr/local/lib/libopencv_core.so.4.6.0
   OBJECT_DIR = CMakeFiles/Photoshop_Casero.dir

@@ -1,6 +1,18 @@
 # ninja log v5
-0	1514	1663986695062888174	CMakeFiles/Photoshop_Casero.dir/main.cpp.o	ed3f3a61b483ed05
 1	1515	1663986695062888174	CMakeFiles/Photoshop_Casero.dir/ImageProcessing.cpp.o	73001c33560e62a4
-1	1425	1663986722262216354	CMakeFiles/Photoshop_Casero.dir/main.cpp.o	ed3f3a61b483ed05
-1	1367	1663986755177419865	CMakeFiles/Photoshop_Casero.dir/main.cpp.o	ed3f3a61b483ed05
-1	1438	1663986796856435619	CMakeFiles/Photoshop_Casero.dir/main.cpp.o	ed3f3a61b483ed05
+1	1397	1663987265130719111	CMakeFiles/Photoshop_Casero.dir/main.cpp.o	ed3f3a61b483ed05
+1	181	1663987451239297823	CMakeFiles/Photoshop_Casero.dir/main.cpp.o	ed3f3a61b483ed05
+181	312	1663987451371295453	Photoshop_Casero	39c24aa758176574
+1	1420	1663987518886091820	CMakeFiles/Photoshop_Casero.dir/main.cpp.o	ed3f3a61b483ed05
+1	1376	1663987532773846306	CMakeFiles/Photoshop_Casero.dir/main.cpp.o	ed3f3a61b483ed05
+1	186	1663987540585708495	CMakeFiles/Photoshop_Casero.dir/main.cpp.o	ed3f3a61b483ed05
+186	309	1663987540705706380	Photoshop_Casero	39c24aa758176574
+1	1516	1663987656847680255	CMakeFiles/Photoshop_Casero.dir/main.cpp.o	ed3f3a61b483ed05
+1	1370	1663987762940372869	CMakeFiles/Photoshop_Casero.dir/main.cpp.o	ed3f3a61b483ed05
+1	1364	1663987798594796623	CMakeFiles/Photoshop_Casero.dir/main.cpp.o	ed3f3a61b483ed05
+1	1417	1663987862714742519	CMakeFiles/Photoshop_Casero.dir/main.cpp.o	ed3f3a61b483ed05
+1	1500	1663987862798747365	CMakeFiles/Photoshop_Casero.dir/ImageProcessing.cpp.o	73001c33560e62a4
+1	1417	1663988016654373381	CMakeFiles/Photoshop_Casero.dir/ImageProcessing.cpp.o	73001c33560e62a4
+1	1437	1663988016674374226	CMakeFiles/Photoshop_Casero.dir/main.cpp.o	ed3f3a61b483ed05
+1	1434	1663988292251273132	CMakeFiles/Photoshop_Casero.dir/main.cpp.o	ed3f3a61b483ed05
+1	1448	1663988292263273419	CMakeFiles/Photoshop_Casero.dir/ImageProcessing.cpp.o	73001c33560e62a4
