@@ -1,7 +1,3 @@
-#include <iostream>
-#include "ImageProcessing.cpp"
-
-int main() {
-    std::cout << "Hello, World!" << std::endl;
-    return 0;
-}
+//
+// Created by kevin on 23/09/22.
+//
