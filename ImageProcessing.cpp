@@ -6,35 +6,15 @@
 #include <opencv2/imgproc.hpp>
 #include <opencv2/opencv.hpp>
 #include <iostream>
+#include "ImageProcessing.h"
 
 using namespace cv;
 using namespace std;
 
-class ImageProcessing{
-private:
-    char type;
-    Mat img,resultImg;
-    float possibleGamma,possibleBright;
-
-
-
-public:
-    ImageProcessing(char,string);
-
-    int filterType();
-    int gaussianBlur();
-    int grayScale();
-    int gammaCorrection();
-    int brightControl();
-    void imgConfirmation();
-
-};
 //Constructor de Clase
-ImageProcessing::ImageProcessing(char _type,string path){
-    type = _type;
+ImageProcessing::ImageProcessing(char clientType, string path){
+    type = clientType;
     img = imread(path);
-
-
 }
 
 int ImageProcessing::filterType(){
@@ -56,40 +36,32 @@ int ImageProcessing::filterType(){
     }
     else{
         cout << "Meh, no funca";
-        return -1;
     }
-    return 0;
 }
-// Cambiar valores para que sean los enviados.
 int ImageProcessing::gaussianBlur() {
     GaussianBlur(img,resultImg,Size(7,7),5,0);
-    return 0;
 }
-// No necesita pasar nada
+
 int ImageProcessing::grayScale() { //
     cvtColor(img,resultImg,COLOR_BGR2GRAY);
-    return 0;
 }
 
 int ImageProcessing::gammaCorrection() {
 
-    float gamma = 1/possibleGamma;
-
-    Mat table (1, 256, CV_8U);
+    float gamma = 1/possibleBright;
+    Mat table(1, 256, CV_8U);
     uchar *p = table.ptr();
-    for (int i = 0; i<256;++i){
-        p[i] = (uchar) (pow(i / 255,gamma)*255);
+    for (int i = 0; i < 256; ++i) {
+        p[i] = (uchar) (pow(i / 255.0, gamma) * 255);
     }
-    LUT(img,table,resultImg);
-    return 0;
+
+    LUT(img, table, resultImg);
 }
+
 
 int ImageProcessing::brightControl() {
-    img.convertTo(resultImg, -1, -1, possibleBright);
-    return 0;
+    img.convertTo(resultImg, -1, 1, possibleBright);
 }
-
-
 
 // Metodo de prueba para ver las imagenes
 void ImageProcessing::imgConfirmation() {

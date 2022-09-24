@@ -2,11 +2,14 @@
 // Created by kevin on 23/09/22.
 //
 #include <iostream>
-#include "ImageProcessing.cpp"
+#include "ImageProcessing.h"
 
 using namespace std;
 
 int main(){
-    ImageProcessing prueba = ImageProcessing('G',"Prueba.jpeg");
+    cout << "Hola mundo";
+    ImageProcessing prueba = ImageProcessing('C', "Prueba.jpeg");
+    prueba.filterType();
+    prueba.imgConfirmation();
     return 0;
 }
