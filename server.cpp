@@ -11,7 +11,7 @@
 
 using namespace std;
 
-int main(){
+int server(){
 
     //Create a socket
     int listening = socket(AF_INET, SOCK_STREAM, 0);

@@ -8,9 +8,10 @@
 using namespace std;
 
 int main(){
-    cout << "Hola mundo";
-    ImageProcessing prueba = ImageProcessing('E', "Prueba.jpeg");
+
+    ImageProcessing prueba = ImageProcessing("G", "Prueba.jpeg",0.6);
     prueba.filterType();
     prueba.imgConfirmation();
+
     return 0;
 }

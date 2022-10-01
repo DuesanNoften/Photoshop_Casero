@@ -10,7 +10,7 @@
 
 using namespace std;
 
-int main(){
+int client(){
 
     //Create Socket
     int sock = socket(AF_INET, SOCK_STREAM, 0);
@@ -40,12 +40,46 @@ int main(){
     char buf[4096];
     string userInput;
 
+    //Enter the text
+    cout << ">";
+    getline(cin, userInput);
+
+    //String parser variables
+    string delimiter = "/";
+    size_t pos = 0;
+    string token;
+
+    //Creation variables
+    string filter;
+    string path;
+    float variation = 0.0;
+
+    //String parser function
+    int i=0;
+    bool check = false;
+    while((pos = userInput.find(delimiter)) != string::npos || i<3){
+
+        token = userInput.substr(0, pos);
+        if(i == 0){
+            filter = token;
+            if (filter == "G" || filter == "E"){
+                check = true;
+            }
+        }else if (i == 1){
+            path = token;
+            if (check){
+                break;
+            }
+        }else{
+            variation = stof(token);
+        }
+
+        userInput.erase(0, pos + delimiter.length());
+        i++;
+    }
+
     do
     {
-        //Enter the text
-        cout << ">";
-        getline(cin, userInput);
-
         //Send to the server
         int sendResult = send(sock, userInput.c_str(), userInput.size() + 1, 0);
 

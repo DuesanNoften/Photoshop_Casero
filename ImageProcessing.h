@@ -17,15 +17,14 @@ using namespace std;
 class ImageProcessing{
 private:
 
-    char type;
+    string type;
     Mat img,resultImg;
     float possibleVariation;
 
 
 
 public:
-    ImageProcessing(char clientType, string path);
-    ImageProcessing(char clientType, string path, float variation);
+    ImageProcessing(string clientType, string path, float variation);
 
     int filterType();
 
