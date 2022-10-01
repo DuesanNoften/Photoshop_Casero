@@ -24,15 +24,22 @@ ImageProcessing::ImageProcessing(string clientType, string path, float variation
 int ImageProcessing::filterType(){
     if(type == "G"){
         gaussianBlur();
+        return 0;
     }
     else if(type == "E"){
         grayScale();
+        return 0;
     }
     else if(type == "B"){
         brightControl();
+        return 0;
     }
     else if(type == "C"){
         gammaCorrection();
+        return 0;
+    }
+    else{
+        return -1;
     }
 
 }
