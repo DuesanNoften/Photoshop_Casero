@@ -4,17 +4,16 @@
 
 #include <iostream>
 #include "ImageProcessing.h"
-#include "BinToImage.cpp"
+
 using namespace std;
 
-void BinToImage();
 
 int main(){
 
-    ImageProcessing test = ImageProcessing("G", "Prueba.jpeg",0.6);
+    //ImageProcessing test = ImageProcessing("E", "Prueba.jpeg",0.6);
 
-    test.filterType();
-    BinToImage();
+    //test.filterType();
+    //BinToImage();
     //test.imgConfirmation();
 
     //Unit Testing

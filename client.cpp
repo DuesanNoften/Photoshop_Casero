@@ -6,11 +6,13 @@
 #include <arpa/inet.h>
 #include <string.h>
 #include <string>
-
+#include "ImageToBin.cpp"
 
 using namespace std;
 
-int client(){
+//void ImageToBin(string imageName);
+
+int main(){
 
     //Create Socket
     int sock = socket(AF_INET, SOCK_STREAM, 0);
@@ -52,7 +54,7 @@ int client(){
     //Creation variables
     string filter;
     string path;
-    float variation = 0.0;
+    string variation = "0,0";
 
     //String parser function
     int i=0;
@@ -71,22 +73,20 @@ int client(){
                 break;
             }
         }else{
-            variation = stof(token);
+            variation = token;
         }
 
         userInput.erase(0, pos + delimiter.length());
         i++;
     }
 
+    int sendFilter = send(sock, filter.c_str(), filter.size() + 1, 0);
+    int sendVariation = send(sock, variation.c_str(), variation.size() + 1, 0);
+    int sendPath = send(sock, path.c_str(), path.size()+1,0);
+
+
     do
     {
-        //Send to the server
-        int sendResult = send(sock, userInput.c_str(), userInput.size() + 1, 0);
-
-        if (sendResult == -1){
-            cerr<< "Couldn't send to server!";
-            continue;
-        }
 
         //Wait for response
         memset(buf, 4096, 0);

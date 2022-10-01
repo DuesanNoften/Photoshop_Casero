@@ -12,7 +12,7 @@
 using namespace cv;
 using namespace std;
 
-void ImageToBin(string imageName);
+//void ImageToBin(string imageName);
 
 //Class Constructor
 ImageProcessing::ImageProcessing(string clientType, string path, float variation){
@@ -51,7 +51,6 @@ int ImageProcessing::gaussianBlur() {
     GaussianBlur(img,resultImg,Size(7,7),5,0);
     remove("ImagenFiltro.jpg");
     imwrite("ImagenFiltro.jpg",resultImg);
-    ImageToBin("ImagenFiltro.jpg");
 
     return 0;
 }
@@ -63,7 +62,6 @@ int ImageProcessing::grayScale() {
     cvtColor(img,resultImg,COLOR_BGR2GRAY);
     remove("ImagenFiltro.jpg");
     imwrite("ImagenFiltro.jpg",resultImg);
-    ImageToBin("ImagenFiltro.jpg");
     return 0;
 }
 
@@ -82,7 +80,7 @@ int ImageProcessing::gammaCorrection() {
     LUT(img, table, resultImg);
     remove("ImagenFiltro.jpg");
     imwrite("ImagenFiltro.jpg",resultImg);
-    ImageToBin("ImagenFiltro.jpg");
+
     return 0;
 }
 
@@ -94,7 +92,6 @@ int ImageProcessing::brightControl() {
     img.convertTo(resultImg, -1, 1, possibleVariation);
     remove("ImagenFiltro.jpg");
     imwrite("ImagenFiltro.jpg",resultImg);
-    ImageToBin("ImagenFiltro.jpg");
     return 0;
 }
 

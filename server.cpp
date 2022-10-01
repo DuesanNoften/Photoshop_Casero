@@ -7,11 +7,13 @@
 #include <arpa/inet.h>
 #include <string.h>
 #include <string>
-#include "main.cpp"
+#include "ImageProcessing.h"
+#include "opencv2/imgcodecs.hpp"
+
 
 using namespace std;
 
-int server(){
+int main(){
 
     //Create a socket
     int listening = socket(AF_INET, SOCK_STREAM, 0);
@@ -69,7 +71,7 @@ int server(){
     //While recieving display a message
     char buf[4096];
     string filter;
-    string level;
+    float level;
     string line;
     bool bTemp = false;
 
@@ -82,13 +84,16 @@ int server(){
         if(buf == "G"||"E"||"B"||"C"){
             filter = buf;
             bTemp = true;
-        }else if{
-            level = buf;
+        }else if(bTemp){
+            level = stof(buf);
             bTemp = false;
-        }else{
-            line = temp;
-            //llamar funcion para escribir la linea
-            line="";
+        }else if(true){
+            line = buf;
+            //ImageProcessing image = ImageProcessing(filter,line,level);
+            //image.filterType();
+            cout << "Tu imagen ha sido editada";
+
+
         }
         if (bytesRecv == -1){
             cerr <<"There was a connection issue!" <<endl;

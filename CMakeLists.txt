@@ -6,6 +6,6 @@ include_directories( ${OpenCV_INCLUDE_DIRS} )
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Photoshop_Casero ImageProcessing.cpp main.cpp ImageProcessing.h )
+add_executable(Photoshop_Casero ImageProcessing.cpp ImageProcessing.h server.cpp)
 
 target_link_libraries( Photoshop_Casero ${OpenCV_LIBS} )
