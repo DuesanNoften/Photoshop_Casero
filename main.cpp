@@ -1,6 +1,7 @@
 //
 // Created by kevin on 23/09/22.
 //
+/*
 #include <iostream>
 #include "ImageProcessing.h"
 
@@ -13,3 +14,4 @@ int main(){
     prueba.imgConfirmation();
     return 0;
 }
+ */

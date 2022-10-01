@@ -1,4 +1,5 @@
 #include <iostream>
+#include "stdio.h"
 #include <sys/types.h>
 #include <unistd.h>
 #include <sys/socket.h>
@@ -6,7 +7,7 @@
 #include <arpa/inet.h>
 #include <string.h>
 #include <string>
-
+#include "main.cpp"
 
 using namespace std;
 
@@ -73,6 +74,9 @@ int main(){
 
         //Wait for a message
         int bytesRecv = recv(clientSocket, buf, 4096, 0);
+        if (buf=="Convert"){
+            main();
+        }
         if (bytesRecv == -1){
             cerr <<"There was a connection issue!" <<endl;
             break;

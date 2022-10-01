@@ -7,7 +7,15 @@
 using namespace std;
 
 int main(){
-    ifstream image("Mesa.jpg", ios::in | ios::binary);
+    try {
+        remove("bin_image_data.txt");
+    }
+    catch (bool) {
+
+    }
+    string name;
+    cout<<"Ingrese nombre de la imagen"; cin>>name;
+    ifstream image(name, ios::in | ios::binary);
     ofstream binary("bin_image_data.txt", ios::out | ios::app);
     char contain;
     while (!image.eof()){

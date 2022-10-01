@@ -6,10 +6,16 @@
 #include "cstring"
 using namespace std;
 
+// This code
 int main() {
+    try{
+        remove("Result.jpg");
+    }
+    catch (bool){
+
+    }
     ofstream image("Result.jpg", ios::out | ios::app);
-    ifstream
-    binary("bin_image_data.txt", ios::in | ios::app | ios:: binary);
+    ifstream binary("bin_image_data.txt", ios::in | ios::app | ios:: binary);
     char contain;
     while (!binary.eof()) {
         contain = binary.get();
