@@ -7,17 +7,18 @@
 #include <opencv2/opencv.hpp>
 #include <iostream>
 #include "ImageProcessing.h"
+#include "ImageToBin.cpp"
 
 using namespace cv;
 using namespace std;
 
+void ImageToBin(string imageName);
 
 //Class Constructor
 ImageProcessing::ImageProcessing(string clientType, string path, float variation){
     type = clientType;
     img = imread(path);
     possibleVariation = variation;
-
 }
 
 //Method in charge of distinguishing the filter that has to be done.
@@ -48,6 +49,10 @@ int ImageProcessing::gaussianBlur() {
         return -1;
     }
     GaussianBlur(img,resultImg,Size(7,7),5,0);
+    remove("ImagenFiltro.jpg");
+    imwrite("ImagenFiltro.jpg",resultImg);
+    ImageToBin("ImagenFiltro.jpg");
+
     return 0;
 }
 
@@ -56,6 +61,9 @@ int ImageProcessing::grayScale() {
         return -1;
     }
     cvtColor(img,resultImg,COLOR_BGR2GRAY);
+    remove("ImagenFiltro.jpg");
+    imwrite("ImagenFiltro.jpg",resultImg);
+    ImageToBin("ImagenFiltro.jpg");
     return 0;
 }
 
@@ -72,6 +80,9 @@ int ImageProcessing::gammaCorrection() {
     }
 
     LUT(img, table, resultImg);
+    remove("ImagenFiltro.jpg");
+    imwrite("ImagenFiltro.jpg",resultImg);
+    ImageToBin("ImagenFiltro.jpg");
     return 0;
 }
 
@@ -81,6 +92,9 @@ int ImageProcessing::brightControl() {
         return -1;
     }
     img.convertTo(resultImg, -1, 1, possibleVariation);
+    remove("ImagenFiltro.jpg");
+    imwrite("ImagenFiltro.jpg",resultImg);
+    ImageToBin("ImagenFiltro.jpg");
     return 0;
 }
 

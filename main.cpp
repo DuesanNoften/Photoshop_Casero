@@ -9,14 +9,14 @@ using namespace std;
 
 int main(){
 
-    ImageProcessing test = ImageProcessing("no sirvo", "Prueba.jpeg",0.6);
+    ImageProcessing test = ImageProcessing("G", "Prueba.jpeg",0.6);
 
-    //prueba.filterType();
-    //prueba.imgConfirmation();
+    test.filterType();
+    //test.imgConfirmation();
 
     //Unit Testing
 
-
+/*
     if(test.grayScale() == 0){
         cout << "funciona como fue esperado" << endl;
     }else{
@@ -46,6 +46,6 @@ int main(){
     }else{
         cout << "acierto inesperado" << endl;
     }
-
+*/
     return 0;
 }
