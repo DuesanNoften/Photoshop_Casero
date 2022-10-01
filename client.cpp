@@ -39,59 +39,22 @@ int main(){
         return -2;
     }
 
-    char buf[1000000];
+    char buf[50];
     string userInput;
 
     //Enter the text
     cout << ">";
     getline(cin, userInput);
+    cout << userInput;
 
-    //String parser variables
-    string delimiter = "/";
-    size_t pos = 0;
-    string token;
-
-    //Creation variables
-    string filter;
-    string path;
-    string variation = "0,0";
-
-    //String parser function
-    int i=0;
-    bool check = false;
-    while((pos = userInput.find(delimiter)) != string::npos || i<3){
-
-        token = userInput.substr(0, pos);
-        if(i == 0){
-            filter = token;
-            if (filter == "G" || filter == "E"){
-                check = true;
-            }
-        }else if (i == 1){
-            path = token;
-            if (check){
-                break;
-            }
-        }else{
-            variation = token;
-        }
-
-        userInput.erase(0, pos + delimiter.length());
-        i++;
-    }
-
-    for(int i=0; i<=2; i++){
-        if(i == 0){int sendFilter = send(sock, filter.c_str(), filter.size() + 1, 0);}
-        else if(i == 1){int sendPath = send(sock, path.c_str(), path.size()+1,0);}
-        else{int sendVariation = send(sock, variation.c_str(), variation.size() + 1, 0);}
-    }
+    int sendLine = send(sock, userInput.c_str(), userInput.size()+1,0);
 
 
     do
     {
 
         //Wait for response
-        memset(buf, 1000000, 0);
+        memset(buf, 50, 0);
         int bytesRecived = recv(sock, buf, 4096, 0);
 
         if (bytesRecived == -1){

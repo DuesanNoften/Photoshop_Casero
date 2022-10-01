@@ -69,37 +69,68 @@ int main(){
     }
 
     //While recieving display a message
-    char buf[1000000];
+    char buf[50];
+    //String parser variables
+    string delimiter = "+";
+    size_t pos = 0;
+    string token;
+
+    //Creation variables
     string filter;
-    float level;
-    string line;
+    string path;
+    string variation = "0.0";
+    string Sbuf = "";
+
+    //String parser function
     int i = 0;
+    bool check = false;
 
     while (true){
         //Clear the buffer
-        memset(buf, 0, 1000000);
+        memset(buf, 0, 50);
 
         //Wait for a message
-        int bytesRecv = recv(clientSocket, buf, 1000000, 0);
+        int bytesRecv = recv(clientSocket, buf, 50, 0);
+        cout <<buf;
 
-        if(i==0){
-            filter.push_back(buf[1000000]);
+        //Char to string
+        int size = sizeof(buf)/sizeof (char);
+        while (i < size){
+            Sbuf = Sbuf + buf[i];
             i++;
-        }else if(i==1){
-            level = stof(buf);
-            i++;
-        }else if(i==2){
-            line.push_back(buf[1000000]);
-            i++;
+        }
+        i = 0;
 
+
+
+        while((pos = Sbuf .find(delimiter)) != string::npos || i<3) {
+
+            token = Sbuf.substr(0, pos);
+            if (i == 0) {
+                filter = token;
+                if (filter == "G" || filter == "E") {
+                    check = true;
+                }
+            } else if (i == 1) {
+                path = token;
+                if (check) {
+                    break;
+                }
+            } else {
+                variation = token;
+            }
+
+            Sbuf.erase(0, pos + delimiter.length());
+            i++;
         }
 
-        if ( i == 3){
-            cout << "Se esta intentando editar tu imagen";
-            ImageProcessing test = ImageProcessing("G", "Prueba.jpg",level);
-            test.filterType();
-            cout << "Tu imagen ha sido editada";
-        }
+
+
+        cout << "Se esta intentando editar tu imagen";
+        ImageProcessing test = ImageProcessing(filter, path , stof(variation));
+        test.filterType();
+        cout << "Tu imagen ha sido editada";
+
 
         if (bytesRecv == -1){
             cerr <<"There was a connection issue!" <<endl;
