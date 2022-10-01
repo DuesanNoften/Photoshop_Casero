@@ -9,19 +9,43 @@ using namespace std;
 
 int main(){
 
-    ImageProcessing test = ImageProcessing("G", "Prueba.jpeg",0.6);
+    ImageProcessing test = ImageProcessing("no sirvo", "Prueba.jpeg",0.6);
 
     //prueba.filterType();
     //prueba.imgConfirmation();
 
     //Unit Testing
-    test.grayScale();
-    test.gaussianBlur();
-    test.gammaCorrection();
-    test.brightControl();
 
 
+    if(test.grayScale() == 0){
+        cout << "funciona como fue esperado" << endl;
+    }else{
+        cout << "fallo inesperado" << endl;
+    }
 
+    if(test.gaussianBlur()== 0){
+        cout << "funciona como fue esperado" << endl;
+    }else{
+        cout << "fallo inesperado" << endl;
+    }
+
+    if(test.gammaCorrection() == 0){
+        cout << "funciona como fue esperado" << endl;
+    }else{
+        cout << "fallo inesperado" << endl;
+    }
+
+    if(test.brightControl() == 0){
+        cout << "funciona como fue esperado" << endl;
+    }else{
+        cout << "fallo inesperado" << endl;
+    }
+
+    if(test.filterType() == -1){
+        cout << "fallo esperado" << endl;
+    }else{
+        cout << "acierto inesperado" << endl;
+    }
 
     return 0;
 }
