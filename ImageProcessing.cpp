@@ -19,6 +19,7 @@ ImageProcessing::ImageProcessing(string clientType, string path, float variation
     possibleVariation = variation;
 
 }
+
 //Method in charge of distinguishing the filter that has to be done.
 int ImageProcessing::filterType(){
     if(type == "G"){
@@ -33,20 +34,28 @@ int ImageProcessing::filterType(){
     else if(type == "C"){
         gammaCorrection();
     }
-    else{
-        return -1;
-    }
-    return 0;
+
 }
 int ImageProcessing::gaussianBlur() {
+    if (img.empty()) {
+        return -1;
+    }
     GaussianBlur(img,resultImg,Size(7,7),5,0);
+    return 0;
 }
 
-int ImageProcessing::grayScale() { //
+int ImageProcessing::grayScale() {
+    if (img.empty()) {
+        return -1;
+    }
     cvtColor(img,resultImg,COLOR_BGR2GRAY);
+    return 0;
 }
 
 int ImageProcessing::gammaCorrection() {
+    if (img.empty()) {
+        return -1;
+    }
 
     float gamma = 1/possibleVariation;
     Mat table(1, 256, CV_8U);
@@ -56,11 +65,16 @@ int ImageProcessing::gammaCorrection() {
     }
 
     LUT(img, table, resultImg);
+    return 0;
 }
 
 
 int ImageProcessing::brightControl() {
+    if (img.empty()) {
+        return -1;
+    }
     img.convertTo(resultImg, -1, 1, possibleVariation);
+    return 0;
 }
 
 // Test method to see the images

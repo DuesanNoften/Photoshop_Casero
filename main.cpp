@@ -9,9 +9,20 @@ using namespace std;
 
 int main(){
 
-    ImageProcessing prueba = ImageProcessing("G", "Prueba.jpeg",0.6);
-    prueba.filterType();
-    prueba.imgConfirmation();
+    ImageProcessing test = ImageProcessing("G", "Prueba.jpeg",0.6);
+
+    //prueba.filterType();
+    //prueba.imgConfirmation();
+
+    //Unit Testing
+    ASSERT
+    test.grayScale();
+    test.gaussianBlur();
+    test.gammaCorrection();
+    test.brightControl();
+
+
+
 
     return 0;
 }

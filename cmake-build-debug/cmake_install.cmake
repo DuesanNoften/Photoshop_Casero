@@ -1,4 +1,4 @@
-# Install script for directory: /home/duesan/Desktop/Photoshop_Casero
+# Install script for directory: /home/kevin/Escritorio/Photoshop_Casero
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/duesan/Desktop/Photoshop_Casero/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/kevin/Escritorio/Photoshop_Casero/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
