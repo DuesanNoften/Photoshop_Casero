@@ -9,7 +9,7 @@ using namespace std;
 
 int main(){
     cout << "Hola mundo";
-    ImageProcessing prueba = ImageProcessing('E', "Prueba.jpeg");
+    ImageProcessing prueba = ImageProcessing('E', "ImageConversion/Result.jpg");
     prueba.filterType();
     prueba.imgConfirmation();
     return 0;

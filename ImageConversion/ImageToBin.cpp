@@ -3,10 +3,16 @@
 //
 #include <fstream>
 #include <iostream>
-#include "cstring"
+#include "filesystem"
+#include "ImageConversion.h"
+#include "unistd.h"
 using namespace std;
 
-int main(){
+ImageToBin::ImageToBin(string imageName) {
+    string bin;
+}
+
+void ImageToBin::convertToBin() {
     try {
         remove("bin_image_data.txt");
     }
@@ -24,5 +30,10 @@ int main(){
     }
     image.close();
     binary.close();
-    return 0;
+    this->bin= get_current_dir_name();
+    this->bin+="bin_image_data.txt";
+}
+
+string ImageToBin::getBin() {
+    return this->bin;
 }
