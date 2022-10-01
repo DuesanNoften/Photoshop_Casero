@@ -16,14 +16,16 @@ using namespace std;
 
 class ImageProcessing{
 private:
+
     char type;
     Mat img,resultImg;
-    float possibleGamma,possibleBright;
+    float possibleVariation;
 
 
 
 public:
-    ImageProcessing(char, string);
+    ImageProcessing(char clientType, string path);
+    ImageProcessing(char clientType, string path, float variation);
 
     int filterType();
 
@@ -33,6 +35,7 @@ public:
     int brightControl();
 
     void imgConfirmation();
+
 
 };
 

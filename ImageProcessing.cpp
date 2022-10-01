@@ -11,10 +11,17 @@
 using namespace cv;
 using namespace std;
 
-//Class Constructor
+//Class Constructor for Gray Scale and Gaussian Blur.
 ImageProcessing::ImageProcessing(char clientType, string path){
     type = clientType;
     img = imread(path);
+}
+//Class Constructor for Bright Control and Gamma Correction.
+ImageProcessing::ImageProcessing(char clientType, string path, float variation){
+    type = clientType;
+    img = imread(path);
+    possibleVariation = variation;
+
 }
 //Method in charge of distinguishing the filter that has to be done.
 int ImageProcessing::filterType(){
@@ -45,7 +52,7 @@ int ImageProcessing::grayScale() { //
 
 int ImageProcessing::gammaCorrection() {
 
-    float gamma = 1/possibleBright;
+    float gamma = 1/possibleVariation;
     Mat table(1, 256, CV_8U);
     uchar *p = table.ptr();
     for (int i = 0; i < 256; ++i) {
@@ -57,7 +64,7 @@ int ImageProcessing::gammaCorrection() {
 
 
 int ImageProcessing::brightControl() {
-    img.convertTo(resultImg, -1, 1, possibleBright);
+    img.convertTo(resultImg, -1, 1, possibleVariation);
 }
 
 // Test method to see the images
