@@ -15,7 +15,6 @@ int main(){
     //prueba.imgConfirmation();
 
     //Unit Testing
-    ASSERT
     test.grayScale();
     test.gaussianBlur();
     test.gammaCorrection();

@@ -3,17 +3,11 @@
 //
 #include <fstream>
 #include <iostream>
-#include "unistd.h"
-#include "ImageConversion.h"
-
+#include "cstring"
 using namespace std;
 
 // This code
-BinToImage::BinToImage() {
-    string result;
-}
-
-void BinToImage::convertToImage() {
+int main() {
     try{
         remove("Result.jpg");
     }
@@ -29,11 +23,6 @@ void BinToImage::convertToImage() {
     }
     image.close();
     binary.close();
-    this->result=get_current_dir_name();
-    this->result+="Result.jpg";
-}
-
-string BinToImage::getImage() {
-    return this->result;
+    return 0;
 }
 

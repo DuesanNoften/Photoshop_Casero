@@ -68,14 +68,27 @@ int server(){
 
     //While recieving display a message
     char buf[4096];
+    string filter;
+    string level;
+    string line;
+    bool bTemp = false;
+
     while (true){
         //Clear the buffer
         memset(buf, 0, 4096);
 
         //Wait for a message
         int bytesRecv = recv(clientSocket, buf, 4096, 0);
-        if (buf=="Convert"){
-            main();
+        if(buf == "G"||"E"||"B"||"C"){
+            filter = buf;
+            bTemp = true;
+        }else if{
+            level = buf;
+            bTemp = false;
+        }else{
+            line = temp;
+            //llamar funcion para escribir la linea
+            line="";
         }
         if (bytesRecv == -1){
             cerr <<"There was a connection issue!" <<endl;
