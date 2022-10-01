@@ -11,32 +11,29 @@
 using namespace cv;
 using namespace std;
 
-//Constructor de Clase
+//Class Constructor
 ImageProcessing::ImageProcessing(char clientType, string path){
     type = clientType;
     img = imread(path);
 }
-
+//Method in charge of distinguishing the filter that has to be done.
 int ImageProcessing::filterType(){
     if(type == 'G'){
-        cout <<"Filtro Gaussian";
         gaussianBlur();
     }
     else if(type == 'E'){
-        cout <<"Filtro Escala de grises";
         grayScale();
     }
     else if(type == 'B'){
-        cout <<"Filtro Brillo";
         brightControl();
     }
     else if(type == 'C'){
-        cout <<"Filtro Correcion gamma";
         gammaCorrection();
     }
     else{
-        cout << "Meh, no funca";
+        return -1;
     }
+    return 0;
 }
 int ImageProcessing::gaussianBlur() {
     GaussianBlur(img,resultImg,Size(7,7),5,0);
@@ -63,7 +60,7 @@ int ImageProcessing::brightControl() {
     img.convertTo(resultImg, -1, 1, possibleBright);
 }
 
-// Metodo de prueba para ver las imagenes
+// Test method to see the images
 void ImageProcessing::imgConfirmation() {
     imshow("Original img",img);
     imshow("Filter img",resultImg);
