@@ -4,15 +4,14 @@
 #include <opencv2/imgcodecs.hpp>
 #include <opencv2/highgui.hpp>
 #include <opencv2/imgproc.hpp>
-#include <opencv2/opencv.hpp>
+
 #include <iostream>
 #include "ImageProcessing.h"
-#include "ImageToBin.cpp"
+
 
 using namespace cv;
 using namespace std;
 
-//void ImageToBin(string imageName);
 
 //Class Constructor
 ImageProcessing::ImageProcessing(string clientType, string path, float variation){

@@ -39,7 +39,7 @@ int main(){
         return -2;
     }
 
-    char buf[4096];
+    char buf[1000000];
     string userInput;
 
     //Enter the text
@@ -80,16 +80,18 @@ int main(){
         i++;
     }
 
-    int sendFilter = send(sock, filter.c_str(), filter.size() + 1, 0);
-    int sendVariation = send(sock, variation.c_str(), variation.size() + 1, 0);
-    int sendPath = send(sock, path.c_str(), path.size()+1,0);
+    for(int i=0; i<=2; i++){
+        if(i == 0){int sendFilter = send(sock, filter.c_str(), filter.size() + 1, 0);}
+        else if(i == 1){int sendPath = send(sock, path.c_str(), path.size()+1,0);}
+        else{int sendVariation = send(sock, variation.c_str(), variation.size() + 1, 0);}
+    }
 
 
     do
     {
 
         //Wait for response
-        memset(buf, 4096, 0);
+        memset(buf, 1000000, 0);
         int bytesRecived = recv(sock, buf, 4096, 0);
 
         if (bytesRecived == -1){

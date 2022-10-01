@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include "stdio.h"
 #include <sys/types.h>
@@ -7,14 +8,13 @@
 #include <arpa/inet.h>
 #include <string.h>
 #include <string>
-#include "ImageProcessing.h"
-#include "opencv2/imgcodecs.hpp"
 
+#include "ImageProcessing.h"
+#include <opencv2/imgcodecs.hpp>
 
 using namespace std;
 
 int main(){
-
     //Create a socket
     int listening = socket(AF_INET, SOCK_STREAM, 0);
 
@@ -69,32 +69,38 @@ int main(){
     }
 
     //While recieving display a message
-    char buf[4096];
+    char buf[1000000];
     string filter;
     float level;
     string line;
-    bool bTemp = false;
+    int i = 0;
 
     while (true){
         //Clear the buffer
-        memset(buf, 0, 4096);
+        memset(buf, 0, 1000000);
 
         //Wait for a message
-        int bytesRecv = recv(clientSocket, buf, 4096, 0);
-        if(buf == "G"||"E"||"B"||"C"){
-            filter = buf;
-            bTemp = true;
-        }else if(bTemp){
-            level = stof(buf);
-            bTemp = false;
-        }else if(true){
-            line = buf;
-            //ImageProcessing image = ImageProcessing(filter,line,level);
-            //image.filterType();
-            cout << "Tu imagen ha sido editada";
+        int bytesRecv = recv(clientSocket, buf, 1000000, 0);
 
+        if(i==0){
+            filter.push_back(buf[1000000]);
+            i++;
+        }else if(i==1){
+            level = stof(buf);
+            i++;
+        }else if(i==2){
+            line.push_back(buf[1000000]);
+            i++;
 
         }
+
+        if ( i == 3){
+            cout << "Se esta intentando editar tu imagen";
+            ImageProcessing test = ImageProcessing("G", "Prueba.jpg",level);
+            test.filterType();
+            cout << "Tu imagen ha sido editada";
+        }
+
         if (bytesRecv == -1){
             cerr <<"There was a connection issue!" <<endl;
             break;
@@ -110,6 +116,7 @@ int main(){
         //Resend the message
         send(clientSocket, buf, bytesRecv + 1, 0);
     }
+
 
     //Close the socket
     close(clientSocket);

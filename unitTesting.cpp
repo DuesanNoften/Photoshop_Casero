@@ -8,14 +8,8 @@
 using namespace std;
 
 
-int main(){
 
-    //ImageProcessing test = ImageProcessing("E", "Prueba.jpeg",0.6);
-
-    //test.filterType();
-    //BinToImage();
-    //test.imgConfirmation();
-
+int unitTesting(){
     //Unit Testing
 
 /*
