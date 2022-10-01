@@ -6,16 +6,14 @@
 #include "cstring"
 using namespace std;
 
-int main(){
+void ImageToBin(string imageName){
     try {
         remove("bin_image_data.txt");
     }
     catch (bool) {
 
     }
-    string name;
-    cout<<"Ingrese nombre de la imagen"; cin>>name;
-    ifstream image(name, ios::in | ios::binary);
+    ifstream image(imageName, ios::in | ios::binary);
     ofstream binary("bin_image_data.txt", ios::out | ios::app);
     char contain;
     while (!image.eof()){
@@ -24,5 +22,4 @@ int main(){
     }
     image.close();
     binary.close();
-    return 0;
 }

@@ -7,7 +7,7 @@
 using namespace std;
 
 // This code
-int main() {
+void BinToImage() {
     try{
         remove("Result.jpg");
     }
@@ -23,6 +23,5 @@ int main() {
     }
     image.close();
     binary.close();
-    return 0;
 }
 
